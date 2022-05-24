@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/show_dialog.dart';
 
-import 'src/list.dart';
+import 'my_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -14,99 +15,50 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final controller = TextEditingController();
 
-  // final myList = <String>[];
-
-  int index = 0;
-
-  Future<void> _deleteDialog(index) async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Alert'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: const <Widget>[
-                Text('Do you want to remove it?'),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Yes'),
-              onPressed: () {
-                Navigator.of(context).pop();
-                setState(() {
-                  removeFromList(index);
-                });
-              },
-            ),
-            TextButton(
-                child: const Text('No'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                })
-          ],
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Task List'),
-      ),
-      body: Column(children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
+        appBar: AppBar(title: const Text('My Task List')),
+        body: Column(children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(children: [
               Expanded(
                 child: TextField(controller: controller),
               ),
               IconButton(
+                  icon: const Icon(Icons.add),
                   onPressed: () {
                     final textInput = controller.text.trim();
                     setState(() {
                       if (textInput.isNotEmpty) {
-                        addToList(textInput);
+                        getMyList().add(textInput);
                       }
                     });
                     controller.clear();
-                  },
-                  icon: const Icon(Icons.add))
-            ],
+                  })
+            ]),
           ),
-        ),
-        Expanded(
-          child: ListView.builder(
-            itemCount: myList().length,
-            itemBuilder: (context, index) {
-              final item = myList()[index];
+          Expanded(
+              child: ListView.builder(
+                  itemCount: getMyList().length,
+                  itemBuilder: (context, index) {
+                    final item = getMyList()[index];
 
-              return ListTile(
-                title: Text(item),
-                onLongPress: () {
-                  //   showDialog(
-                  //     context: context,
-                  //     builder: (_) => const DeleteDialog(),
-                  //   );
-                  // },
-
-                  setState(() {
-                    // await DeleteDialog();
-                    _deleteDialog(index);
-                    // myList.removeAt(index);
-                  });
-                },
-              );
-            },
-          ),
-        )
-      ]),
-    );
+                    return ListTile(
+                        title: Text(item),
+                        onLongPress: () async {
+                          final action = await DialogAction.dialogOptions(
+                              context,
+                              'Delete Action',
+                              'Do you want to remove it?',
+                              'Yes',
+                              'No');
+                          if (action == DialogOptionsEnum.confirm) {
+                            setState(() => getMyList().remove(item));
+                          }
+                        });
+                  })),
+        ]));
   }
 }
