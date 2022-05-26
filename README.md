@@ -8,7 +8,11 @@ This project is my first Flutter App and it is for study purpose, in this app is
 
 | Adding item | Removing item
 | :---: | :---: |
-|![adding_items_screenshot](./readme_images/adding_item.png) | ![removing_items_screenshot](readme_images/removing_item.png) |
+|![adding_items_screenshot](./readme_images/adding_item.png) | ![removing_items_screenshot](./readme_images/removing_item.png) |
+
+| Help button | 
+| :---: |
+|![help_button_screenshot](./readme_images/help_button.png) |
 
 
 |     STACKS    |
@@ -16,7 +20,7 @@ This project is my first Flutter App and it is for study purpose, in this app is
 | ![Dart](https://img.shields.io/badge/-Dart-0175C2?style=flat-square&logo=dart&logoColor=white) ![Flutter](https://img.shields.io/badge/-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white) | 
 
 
-| PROJECT STATUS   |                      Developer                   |
+| PROJECT STATUS   |                      DEVELOPER                   |
 |        :---:     |                         :---:                    |  
 | 	In progress    |   [Kyara Araújo](https://github.com/kyaraaraujo) | 
 
@@ -45,6 +49,8 @@ This project is my first Flutter App and it is for study purpose, in this app is
   - blank: has only white spaces `'     '`
 - Remove from list when the item is long pressed
   - A dialog(`AlertDialog`) will show up asking to confirm or cancel.
+- Help button
+  - A dialog(`AlertDialog`) will show up with information.
 
 ## Reminders
 - Basically eveything on Flutter is a `Widget`, some properties also expects to receive a widget.
@@ -83,7 +89,7 @@ This project is my first Flutter App and it is for study purpose, in this app is
 
 - [x] ~~Change color of the App Bar~~
 
-- [ ] Add a help Button
+- [x] ~~Add a help Button~~
 
 - [x] ~~Separate Dialog from home_page.~~
 
@@ -91,16 +97,20 @@ This project is my first Flutter App and it is for study purpose, in this app is
 
 
 ## References
-- [To do list by Jacob Moura](https://www.youtube.com/watch?v=Hq7JFYQEQjw&list=PLlBnICoI-g-fuy5jZiCufhFip1BlBswI7&index=26)
+- [To do list by Jacob Moura - Flutterando](https://www.youtube.com/watch?v=Hq7JFYQEQjw&list=PLlBnICoI-g-fuy5jZiCufhFip1BlBswI7&index=26)
 
 - [Deleting the item from list by Deivid Willyan](https://www.youtube.com/watch?v=PlB25Z3ma8E&list=PLRpTFz5_57cvo0CHf-AnojOvpznz8YO7S&index=9)
 
 - [Doc - AlertDialog to confirm exclusion](https://api.flutter.dev/flutter/material/AlertDialog-class.html)
 
 - [A reusable AlertDialog](https://www.youtube.com/watch?v=CXO7tKEVjI4)
-  - [source code](https://github.com/TheTechDesigner/AlertDialog-Logout)
+  - [source code from the video](https://github.com/TheTechDesigner/AlertDialog-Logout)
+  - Ideas to separate TextButton options from [this articicle](https://dltlabs.medium.com/a-reusable-flutter-alert-dialog-for-your-projects-3a75148cd418) and 
+  from [codes examples.](https://www.codegrepper.com/code-examples/dart/alert+dialog+in+flutter)
 
-  
+- [Doc - Floating Button](https://api.flutter.dev/flutter/material/FloatingActionButton-class.html)
+
+
 <br>
 
 ---
