@@ -22,7 +22,7 @@ This project is my first Flutter App and it is for study purpose, in this app is
 
 | PROJECT STATUS   |                      DEVELOPER                   |
 |        :---:     |                         :---:                    |  
-| 	In progress    |   [Kyara Araújo](https://github.com/kyaraaraujo) | 
+|     	Done       |   [Kyara Araújo](https://github.com/kyaraaraujo) | 
 
 
 <br>
@@ -73,6 +73,21 @@ This project is my first Flutter App and it is for study purpose, in this app is
 
 - `setState() { }` → is a function that will show the changes inside { } in the screen.
 
+- 3 types of Automated Tests:
+  - `Unit test`: to test a single function, method, or class.
+  - `Widget test`: to test a single widget.
+  - `Integration test`: to test a complete app or a large part of an app.
+  
+  - There are trade-offs between different kinds of testing, for example unit tests has the fastest speed execution but the lowest confidence, in another hand integration test has the lowest speed execution but  the highest confidence.
+  
+    |                  | Unit  | Widget | Integration |
+    | :--:             | :--:  |   :--: |    :--:     |
+    | Confidence       | Low   | Higher	|   Highest   |
+    | Maintenance cost | Low   | Higher | 	Highest   |
+    | Dependencies     | Few   | More   |	  Most      |
+    | Execution speed  | Quick | Quick  |	  Slow      |
+
+
 
 ## **How to run**
 - [Install Flutter](https://flutter.dev/) if you don't have it.
@@ -93,22 +108,27 @@ This project is my first Flutter App and it is for study purpose, in this app is
 
 - [x] ~~Separate Dialog from home_page.~~
 
-- [ ] Unit Tests
+- [x] ~~Widget and Integration Tests~~
 
 
 ## References
-- [To do list by Jacob Moura - Flutterando](https://www.youtube.com/watch?v=Hq7JFYQEQjw&list=PLlBnICoI-g-fuy5jZiCufhFip1BlBswI7&index=26)
+- [To do list by Jacob Moura - Flutterando (PT-BR)](https://www.youtube.com/watch?v=Hq7JFYQEQjw&list=PLlBnICoI-g-fuy5jZiCufhFip1BlBswI7&index=26)
 
-- [Deleting the item from list by Deivid Willyan](https://www.youtube.com/watch?v=PlB25Z3ma8E&list=PLRpTFz5_57cvo0CHf-AnojOvpznz8YO7S&index=9)
+- [Deleting the item from list by Deivid Willyan (PT-BR)](https://www.youtube.com/watch?v=PlB25Z3ma8E&list=PLRpTFz5_57cvo0CHf-AnojOvpznz8YO7S&index=9)
 
 - [Doc - AlertDialog to confirm exclusion](https://api.flutter.dev/flutter/material/AlertDialog-class.html)
 
 - [A reusable AlertDialog](https://www.youtube.com/watch?v=CXO7tKEVjI4)
-  - [source code from the video](https://github.com/TheTechDesigner/AlertDialog-Logout)
+  - [Source code from the video](https://github.com/TheTechDesigner/AlertDialog-Logout)
   - Ideas to separate TextButton options from [this articicle](https://dltlabs.medium.com/a-reusable-flutter-alert-dialog-for-your-projects-3a75148cd418) and 
   from [codes examples.](https://www.codegrepper.com/code-examples/dart/alert+dialog+in+flutter)
 
 - [Doc - Floating Button](https://api.flutter.dev/flutter/material/FloatingActionButton-class.html)
+
+- [Doc - Testing Flutter apps](https://docs.flutter.dev/testing)
+  - [Beginners Flutter test](https://www.youtube.com/watch?v=Ghqry5dtgH4&list=PLB6lc7nQ1n4jN2u4rMmb-3tdJ_cQBs-YS&index=2)
+    - [Source code from the video](https://github.com/ResoCoder/testing-flutter-apps-tutorial)
+  - [Doc - some testing Flutter cookbook](https://docs.flutter.dev/cookbook/testing/widget/tap-drag)
 
 
 <br>
