@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                   final textInput = controller.text.trim();
                   setState(() {
                     if (textInput.isNotEmpty) {
-                      getMyList().add(textInput);
+                      myList.add(textInput);
                     }
                   });
                   controller.clear();
@@ -41,9 +41,9 @@ class _HomePageState extends State<HomePage> {
         ),
         Expanded(
             child: ListView.builder(
-                itemCount: getMyList().length,
+                itemCount: myList.length,
                 itemBuilder: (context, index) {
-                  final item = getMyList()[index];
+                  final item = myList[index];
 
                   return ListTile(
                       title: Text(item),
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                             'Yes',
                             'No');
                         if (action == DialogOptionsEnum.confirm) {
-                          setState(() => getMyList().remove(item));
+                          setState(() => myList.remove(item));
                         }
                       });
                 })),
